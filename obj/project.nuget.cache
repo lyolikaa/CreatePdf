@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "dgSpecHash": "Di/APPiQT5vv4P/Lwm3u0Ou0LcmdMeuuSU8Ncxv6O+2CihwfJITljsNHJKk0GzVmz2hMbomXeCxXoMpgDgqiuw==",
+  "success": true,
+  "projectFilePath": "G:\\pr\\citrus\\.net\\CreatePdf\\CreateFile\\CreateFile.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lyolik\\.nuget\\packages\\itextsharp\\5.5.13\\itextsharp.5.5.13.nupkg.sha512",
+    "C:\\Users\\lyolik\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'iTextSharp 5.5.13' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "iTextSharp",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
+}

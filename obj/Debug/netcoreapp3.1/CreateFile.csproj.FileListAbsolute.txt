@@ -1,0 +1,15 @@
+G:\pr\citrus\.net\CreatePdf\CreateFile\bin\Debug\netcoreapp3.1\CreateFile.exe
+G:\pr\citrus\.net\CreatePdf\CreateFile\obj\Debug\netcoreapp3.1\CreateFile.csprojAssemblyReference.cache
+G:\pr\citrus\.net\CreatePdf\CreateFile\obj\Debug\netcoreapp3.1\CreateFile.AssemblyInfoInputs.cache
+G:\pr\citrus\.net\CreatePdf\CreateFile\obj\Debug\netcoreapp3.1\CreateFile.AssemblyInfo.cs
+G:\pr\citrus\.net\CreatePdf\CreateFile\obj\Debug\netcoreapp3.1\CreateFile.csproj.CoreCompileInputs.cache
+G:\pr\citrus\.net\CreatePdf\CreateFile\bin\Debug\netcoreapp3.1\CreateFile.deps.json
+G:\pr\citrus\.net\CreatePdf\CreateFile\bin\Debug\netcoreapp3.1\CreateFile.runtimeconfig.json
+G:\pr\citrus\.net\CreatePdf\CreateFile\bin\Debug\netcoreapp3.1\CreateFile.runtimeconfig.dev.json
+G:\pr\citrus\.net\CreatePdf\CreateFile\bin\Debug\netcoreapp3.1\CreateFile.dll
+G:\pr\citrus\.net\CreatePdf\CreateFile\bin\Debug\netcoreapp3.1\CreateFile.pdb
+G:\pr\citrus\.net\CreatePdf\CreateFile\bin\Debug\netcoreapp3.1\itextsharp.dll
+G:\pr\citrus\.net\CreatePdf\CreateFile\obj\Debug\netcoreapp3.1\CreateFile.csproj.CopyComplete
+G:\pr\citrus\.net\CreatePdf\CreateFile\obj\Debug\netcoreapp3.1\CreateFile.dll
+G:\pr\citrus\.net\CreatePdf\CreateFile\obj\Debug\netcoreapp3.1\CreateFile.pdb
+G:\pr\citrus\.net\CreatePdf\CreateFile\obj\Debug\netcoreapp3.1\CreateFile.genruntimeconfig.cache
