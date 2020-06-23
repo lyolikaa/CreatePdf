@@ -25,46 +25,41 @@ namespace CreateFile
             {
                 PdfWriter.GetInstance(document, new FileStream($"{Environment.CurrentDirectory}\\invoice{invoiceNo}.pdf", FileMode.Create));
                 document.Open();
-                //Font font = new Font(Font.FontFamily.ar, 6, Font.BOLD, BaseColor.DARK_GRAY);
+                //common styles
                 var baseColor = new BaseColor(90, 90, 90);
+                Font title = FontFactory.GetFont("Arial", size: 30.0f, baseColor);
+                Font mainFont = FontFactory.GetFont("Arial", 10.0f, baseColor);
+
+                //INVOICE header table
+                var table = new PdfPTable(2);
+                table.WidthPercentage = 100;
+                //image cell
                 var image = Image.GetInstance("tvtable.jpg");
                 image.Alignment = Image.ALIGN_LEFT;
-                
                 image.ScaleToFit(100, 50);
-                var table = new PdfPTable(2);
-                
-                table.WidthPercentage = 100;
                 var cell = new PdfPCell(image);cell.HorizontalAlignment = Element.ALIGN_LEFT;cell.VerticalAlignment = Element.ALIGN_CENTER;
                 cell.Border = 0;
                 table.AddCell(cell);
-
-                Font title = FontFactory.GetFont("Arial", size: 30.0f, baseColor);
+                //INVOICE
                 Paragraph p = new Paragraph();
                 p.Alignment = Element.ALIGN_RIGHT;
-                
-
                 cell = new PdfPCell(new Phrase($"INVOICE", title));cell.HorizontalAlignment = Element.ALIGN_RIGHT; cell.VerticalAlignment = Element.ALIGN_CENTER;
                 cell.Border = 0;
                 table.AddCell(cell);
 
                 table.SpacingAfter = 20;    
-                
-
                 document.Add(table);
 
-                Font mainFont = FontFactory.GetFont("Arial", 10.0f, baseColor);
-
+                //company info table
+                table = new PdfPTable(4);
+                table.WidthPercentage = 40;
+                table.SpacingAfter = 30;
+                table.HorizontalAlignment = Element.ALIGN_RIGHT;
                 p = new Paragraph($"Date: {DateTime.Now:dd-MM-yyyy}", font: mainFont); p.Alignment = Element.ALIGN_RIGHT;
                 document.Add(p);
                 p = new Paragraph($"INVOICE # {invoiceNo}", font: mainFont); p.Alignment = Element.ALIGN_RIGHT; p.SpacingAfter = 50;
                 document.Add(p);
 
-                table = new PdfPTable(4);
-                //table.DefaultCell.Border = Rectangle.NO_BORDER;
-                table.WidthPercentage = 40;
-                table.SpacingAfter = 30;
-                //table.DefaultCell.Border = 0;
-                table.HorizontalAlignment = Element.ALIGN_RIGHT;
                 cell = new PdfPCell(new Phrase($"To", mainFont)); cell.HorizontalAlignment = Element.ALIGN_LEFT; cell.Border = 0; 
                 table.AddCell(cell);
                 cell = new PdfPCell(new Phrase($"Name", mainFont)); cell.HorizontalAlignment = Element.ALIGN_RIGHT;cell.Colspan = 3; cell.Border = 0; 
@@ -79,20 +74,24 @@ namespace CreateFile
                 }
                 document.Add(table);
 
+                //invoice data table
                 table = new PdfPTable(4);
                 table.WidthPercentage = 100;
                 table.SetWidths(new int[] { 1, 3, 1, 1 });
                 Font boldFont = FontFactory.GetFont("Arial", 10.0f, Font.BOLD, baseColor);
+                //headers
                 foreach(var head in tableHeaders)
                 {
                     cell = new PdfPCell(new Phrase(head, boldFont)); cell.HorizontalAlignment = Element.ALIGN_LEFT; cell.Border = 0; cell.PaddingBottom = 5;
                     table.AddCell(cell);
                 }
+                //values
                 foreach(var data in tableData)
                 {
                     cell = new PdfPCell(new Phrase(data, mainFont)); cell.HorizontalAlignment = data.Contains("USD") ? Element.ALIGN_RIGHT : Element.ALIGN_LEFT; cell.PaddingBottom = 5;
                     table.AddCell(cell);
                 }
+                //totals
                 for (var i = 0; i < totalData.GetLength(0); i++) 
                 {
                     cell = new PdfPCell(new Phrase("")); cell.Border = 0;
